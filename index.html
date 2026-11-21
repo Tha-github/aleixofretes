@@ -19,10 +19,6 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="wordmark" href="#inicio">Aleixo <span>Fretes</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" hidden>
-        <span class="menu-toggle__icon" aria-hidden="true"></span>
-        Menu
-      </button>
       <nav class="site-nav" id="menu-principal" aria-label="Navegação principal">
         <ul class="site-nav__links" role="list">
           <li><a class="header-link" href="#inicio">Início</a></li>
@@ -36,6 +32,12 @@
       </nav>
     </div>
   </header>
+  <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="menu-lateral" hidden>
+    <span class="menu-toggle__icon" aria-hidden="true"></span>
+  </button>
+  <dialog class="mobile-menu" id="menu-lateral" aria-label="Menu de navegação">
+    <button class="mobile-menu__close" type="button" aria-label="Fechar menu" autofocus>×</button>
+  </dialog>
 
   <main id="conteudo" tabindex="-1">
     <section class="hero" id="inicio" tabindex="-1" aria-labelledby="titulo-principal">

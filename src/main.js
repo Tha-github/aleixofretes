@@ -19,49 +19,48 @@ if (!heroImage.hasAttribute('width')) {
 }
 
 const toggle = document.querySelector('.menu-toggle');
-const nav = document.getElementById(toggle.getAttribute('aria-controls'));
-const header = toggle.closest('.site-header');
+const drawer = document.getElementById(toggle.getAttribute('aria-controls'));
+const nav = document.getElementById('menu-principal');
+const desktopHeader = nav.parentElement;
+const desktop = window.matchMedia('(min-width: 63rem)');
 toggle.hidden = false;
 
-function closeMenu() {
-  toggle.setAttribute('aria-expanded', 'false');
+function syncNavigation() {
+  if (desktop.matches) {
+    if (drawer.open) drawer.close();
+    desktopHeader.append(nav);
+  } else {
+    const focusWasInNav = nav.contains(document.activeElement);
+    drawer.append(nav);
+    if (focusWasInNav) toggle.focus();
+  }
 }
 
 toggle.addEventListener('click', () => {
-  const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-  toggle.setAttribute('aria-expanded', String(!isOpen));
+  toggle.focus();
+  drawer.showModal();
+  toggle.setAttribute('aria-expanded', 'true');
 });
 
-header.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-    event.preventDefault();
-    closeMenu();
-    toggle.focus();
-  }
+drawer.querySelector('.mobile-menu__close').addEventListener('click', () => drawer.close());
+drawer.addEventListener('close', () => {
+  toggle.setAttribute('aria-expanded', String(drawer.open));
+});
+drawer.addEventListener('click', (event) => {
+  if (event.target === drawer && event.clientX < drawer.getBoundingClientRect().left) drawer.close();
 });
 
 nav.addEventListener('click', (event) => {
   const link = event.target.closest('a[href^="#"]');
 
-  if (link && toggle.getAttribute('aria-expanded') === 'true') {
+  if (link && drawer.open) {
+    drawer.close();
     document.getElementById(link.hash.slice(1))?.focus({ preventScroll: true });
-    closeMenu();
   }
 });
 
-header.addEventListener('focusout', (event) => {
-  if (event.relatedTarget && !header.contains(event.relatedTarget)) {
-    closeMenu();
-  }
-});
-
-const desktop = window.matchMedia('(min-width: 63rem)');
-desktop.addEventListener('change', () => {
-  if (!desktop.matches && nav.contains(document.activeElement)) {
-    toggle.focus();
-  }
-  closeMenu();
-});
+desktop.addEventListener('change', syncNavigation);
+syncNavigation();
 
 for (const link of document.querySelectorAll('[data-instagram]')) {
   link.href = business.instagramUrl;
