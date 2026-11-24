@@ -70,8 +70,13 @@ export async function buildSite(config = business, output = join(root, 'dist')) 
     );
   }
 
+  const whatsappUrl = /^[1-9]\d{7,14}$/.test(config.whatsappNumber)
+    ? 'https://wa.me/' + config.whatsappNumber
+    : config.instagramUrl;
+
   const html = source.replace(seoMarker, () => metadata.join('\n'))
     .replace(/\bdata-instagram href="[^"]+"/g, () => 'data-instagram href="' + escapeMarkup(config.instagramUrl) + '"')
+    .replace(/\bdata-whatsapp href="[^"]+"/g, () => 'data-whatsapp href="' + escapeMarkup(whatsappUrl) + '"')
     .replace(hero, () => hero.replace(/\s+src="[^"]*"/, '')
       .replace('fetchpriority=', heroAttributes.join(' ') + ' fetchpriority='));
 

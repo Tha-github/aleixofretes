@@ -1,6 +1,6 @@
 ﻿import { business } from './config/business.js';
 import { renderProofSections } from './proof-sections.js';
-import { initQuoteForm } from './quote-form.js';
+import { initContactMap } from './contact-map.js';
 
 const hero = document.querySelector('.hero');
 const heroImage = document.querySelector('#hero-image');
@@ -22,7 +22,7 @@ for (const link of document.querySelectorAll('[data-instagram]')) {
   link.href = business.instagramUrl;
 }
 
-initQuoteForm(business);
+initContactMap(business.googleMapsUrl);
 renderProofSections(business);
 
 document.getElementById('footer-year').textContent = new Date().getFullYear();

@@ -7,18 +7,19 @@
   <meta name="description" content="Aleixo Fretes oferece mudanças residenciais, fretes, carretos e transportes, com embalagem de móveis e atendimento 24 horas.">
   <title>Aleixo Fretes | Mudanças residenciais, fretes e carretos</title>
   <!-- seo:build -->
-  <link rel="icon" type="image/png" href="assets/icons/aleixo-fretes-192.png">
+  <link rel="icon" type="image/png" sizes="1254x1254" href="assets/images/logo.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="src/styles/main.css">
   <link rel="modulepreload" href="src/config/business.js">
   <script type="module" src="src/main.js"></script>
+  <script src="src/gallery.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="wordmark" href="#inicio">Aleixo <span>Fretes</span></a>
+      <a class="wordmark" href="#inicio"><img src="assets/images/logo.png" width="1254" height="1254" alt="Aleixo Fretes"></a>
       <nav class="site-nav" id="menu-principal" aria-label="Navegação principal">
         <ul class="site-nav__links" role="list">
           <li><a class="header-link" href="#inicio">Início</a></li>
@@ -28,7 +29,7 @@
           <li><a class="header-link" href="#faq">FAQ</a></li>
           <li><a class="header-link" href="#contato">Contato</a></li>
         </ul>
-        <a class="button button--primary" href="#contato">Solicitar orçamento</a>
+        <a class="button button--primary" data-whatsapp href="https://wa.me/5515998049050">Solicitar orçamento</a>
       </nav>
     </div>
   </header>
@@ -43,7 +44,7 @@
         <h1 id="titulo-principal">Sua mudança começa com quem cuida de cada detalhe.</h1>
         <p class="hero__summary">Fretes, mudanças e transportes com cuidado, organização e atendimento 24 horas.</p>
         <div class="actions">
-          <a class="button button--primary" href="#contato">Solicitar orçamento</a>
+          <a class="button button--primary" data-whatsapp href="https://wa.me/5515998049050">Solicitar orçamento</a>
           <a class="button button--secondary" href="#servicos">Conhecer nossos serviços</a>
         </div>
       </div>
@@ -93,7 +94,7 @@
               <h3>Mudanças residenciais</h3>
               <p>Para quem vai trocar de endereço e precisa levar os móveis e pertences da residência para o novo lar.</p>
             </div>
-            <a class="service__link" href="#contato" aria-label="Solicitar orçamento para mudança residencial">Solicitar orçamento</a>
+            <a class="service__link" data-whatsapp href="https://wa.me/5515998049050" aria-label="Solicitar orçamento para mudança residencial">Solicitar orçamento</a>
           </li>
           <li class="service">
             <img class="service__image" src="assets/images/apartamento.png" alt="" loading="lazy" decoding="async">
@@ -101,7 +102,7 @@
               <h3>Mudanças de apartamentos</h3>
               <p>Para mudanças entre casas e apartamentos. Informe se há escadas, elevador ou restrições de acesso ao pedir o orçamento.</p>
             </div>
-            <a class="service__link" href="#contato" aria-label="Solicitar orçamento para mudança de casa ou apartamento">Solicitar orçamento</a>
+            <a class="service__link" data-whatsapp href="https://wa.me/5515998049050" aria-label="Solicitar orçamento para mudança de casa ou apartamento">Solicitar orçamento</a>
           </li>
           <li class="service">
             <img class="service__image" src="assets/images/fretes.png" alt="" loading="lazy" decoding="async">
@@ -109,7 +110,7 @@
               <h3>Fretes</h3>
               <p>Para levar móveis, volumes e outros itens entre dois endereços, inclusive fora de uma mudança.</p>
             </div>
-            <a class="service__link" href="#contato" aria-label="Solicitar orçamento para frete">Solicitar orçamento</a>
+            <a class="service__link" data-whatsapp href="https://wa.me/5515998049050" aria-label="Solicitar orçamento para frete">Solicitar orçamento</a>
           </li>
           <li class="service">
             <img class="service__image" src="assets/images/carreto.png" alt="" loading="lazy" decoding="async">
@@ -117,7 +118,7 @@
               <h3>Carretos</h3>
               <p>Para deslocar um móvel avulso ou poucos volumes, como os itens de uma compra ou retirada.</p>
             </div>
-            <a class="service__link" href="#contato" aria-label="Solicitar orçamento para carreto">Solicitar orçamento</a>
+            <a class="service__link" data-whatsapp href="https://wa.me/5515998049050" aria-label="Solicitar orçamento para carreto">Solicitar orçamento</a>
           </li>
           <li class="service">
             <img class="service__image" src="assets/images/moveis.png" alt="" loading="lazy" decoding="async">
@@ -125,7 +126,7 @@
               <h3>Transporte de móveis</h3>
               <p>Para transportar pertences com volume, dimensões ou destino específicos. Descreva a carga para a equipe avaliar o pedido.</p>
             </div>
-            <a class="service__link" href="#contato" aria-label="Solicitar orçamento para transporte">Solicitar orçamento</a>
+            <a class="service__link" data-whatsapp href="https://wa.me/5515998049050" aria-label="Solicitar orçamento para transporte">Solicitar orçamento</a>
           </li>
         </ul>
       </div>
@@ -168,23 +169,6 @@
 
     <div id="provas"></div>
 
-    <template id="gallery-template">
-      <section class="section gallery" id="galeria" aria-labelledby="titulo-galeria">
-        <div class="container">
-          <h2 class="section-title" id="titulo-galeria">Caminhões e mudanças realizadas</h2>
-          <ul class="gallery__grid" role="list"></ul>
-          <template>
-            <li>
-              <figure class="gallery__figure">
-                <img loading="lazy" decoding="async" alt="">
-                <figcaption></figcaption>
-              </figure>
-            </li>
-          </template>
-        </div>
-      </section>
-    </template>
-
     <template id="testimonials-template">
       <section class="section testimonials" id="depoimentos" aria-labelledby="titulo-depoimentos">
         <div class="container">
@@ -207,7 +191,7 @@
         <div class="quote-banner__copy">
           <h2 class="section-title" id="titulo-chamada">Está planejando sua mudança?</h2>
           <p>Conte com a Aleixo Fretes para transportar seus móveis e pertences com cuidado.</p>
-          <a class="button button--accent" href="#contato">Solicitar meu orçamento</a>
+          <a class="button button--accent" data-whatsapp href="https://wa.me/5515998049050">Solicitar meu orçamento</a>
         </div>
         <img class="quote-banner__image" src="assets/images/transporte.png" alt="Caminhão-baú prata estacionado em uma rua residencial" loading="lazy" decoding="async">
       </div>
@@ -235,7 +219,7 @@
           </details>
           <details class="faq__item">
             <summary>Como solicitar um orçamento?</summary>
-            <p>Acesse a <a href="#contato">seção de orçamento</a> e use o canal indicado para contar o que precisa. A equipe avalia os detalhes do serviço para preparar o orçamento.</p>
+            <p><a data-whatsapp href="https://wa.me/5515998049050">Fale com a equipe pelo WhatsApp</a> e conte o que precisa. A equipe avalia os detalhes do serviço para preparar o orçamento.</p>
           </details>
           <details class="faq__item">
             <summary>A Aleixo Fretes atende 24 horas?</summary>
@@ -249,76 +233,113 @@
       </div>
     </section>
 
+    <section class="section gallery" id="galeria" tabindex="-1" aria-labelledby="titulo-galeria">
+      <div class="container">
+        <h2 class="section-title" id="titulo-galeria">Galeria</h2>
+        <ul class="gallery__track" id="galeria-midias" role="list" tabindex="0" aria-labelledby="titulo-galeria">
+          <li>
+            <figure class="gallery__figure">
+              <img src="assets/images/WhatsApp%20Image%202026-11-24%20at%2013.23.43.jpeg" loading="lazy" decoding="async" alt="Caixas de mudança empilhadas dentro de uma residência">
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <img src="assets/images/WhatsApp%20Image%202026-11-24%20at%2013.23.44%20(1).jpeg" loading="lazy" decoding="async" alt="Caixas organizadas no baú do caminhão">
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <img src="assets/images/WhatsApp%20Image%202026-11-24%20at%2013.23.44.jpeg" loading="lazy" decoding="async" alt="Caixas de mudança preparadas em um cômodo">
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <img src="assets/images/WhatsApp%20Image%202026-11-24%20at%2013.23.45%20(1).jpeg" loading="lazy" decoding="async" alt="Caixas e móveis embalados dentro do caminhão">
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <img src="assets/images/WhatsApp%20Image%202026-11-24%20at%2013.23.45%20(2).jpeg" loading="lazy" decoding="async" alt="Arte da Aleixo Fretes com veículos e o telefone de contato">
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <img src="assets/images/WhatsApp%20Image%202026-11-24%20at%2013.23.45.jpeg" loading="lazy" decoding="async" alt="Carregamento de caixas no baú do caminhão">
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <img src="assets/images/WhatsApp%20Image%202026-11-24%20at%2013.23.46.jpeg" loading="lazy" decoding="async" alt="Arte da Aleixo Fretes com um caminhão verde e a chamada Mudanças para todo o Brasil">
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <video src="assets/images/WhatsApp%20Video%202026-11-24%20at%2013.23.42.mp4" controls playsinline preload="none" aria-label="Vídeo 1"></video>
+              <figcaption>Vídeo 1</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <video src="assets/images/WhatsApp%20Video%202026-11-24%20at%2013.23.43%20(1).mp4" controls playsinline preload="none" aria-label="Vídeo 2"></video>
+              <figcaption>Vídeo 2</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <video src="assets/images/WhatsApp%20Video%202026-11-24%20at%2013.23.43.mp4" controls playsinline preload="none" aria-label="Vídeo 3"></video>
+              <figcaption>Vídeo 3</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <video src="assets/images/WhatsApp%20Video%202026-11-24%20at%2013.23.44%20(1).mp4" controls playsinline preload="none" aria-label="Vídeo 4"></video>
+              <figcaption>Vídeo 4</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <video src="assets/images/WhatsApp%20Video%202026-11-24%20at%2013.23.44.mp4" controls playsinline preload="none" aria-label="Vídeo 5"></video>
+              <figcaption>Vídeo 5</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <video src="assets/images/WhatsApp%20Video%202026-11-24%20at%2013.23.45.mp4" controls playsinline preload="none" aria-label="Vídeo 6"></video>
+              <figcaption>Vídeo 6</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="gallery__figure">
+              <video src="assets/images/WhatsApp%20Video%202026-11-24%20at%2013.23.46.mp4" controls playsinline preload="none" aria-label="Vídeo 7"></video>
+              <figcaption>Vídeo 7</figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="gallery__controls" hidden>
+          <button class="button button--secondary" type="button" aria-controls="galeria-midias">Anterior</button>
+          <button class="button button--secondary" type="button" aria-controls="galeria-midias">Próximo</button>
+        </div>
+      </div>
+    </section>
+
     <section class="section contact" id="contato" tabindex="-1" aria-labelledby="titulo-contato">
       <div class="container contact__layout">
         <div class="contact__intro">
           <h2 class="section-title" id="titulo-contato">Solicite seu orçamento</h2>
-          <p id="quote-unavailable">O formulário de orçamento pelo WhatsApp ainda está indisponível. Entre em contato pelo Instagram para pedir seu orçamento.</p>
+          <p>Conte à nossa equipe o que você precisa pelo WhatsApp para receber um orçamento. Você também pode nos encontrar no Instagram.</p>
           <div class="contact__links">
-            <a class="button button--primary" id="contact-whatsapp" rel="noopener noreferrer" hidden>Fale pelo WhatsApp</a>
-            <a class="button button--primary" data-instagram href="https://www.instagram.com/aristide.aleixo/" rel="noopener noreferrer">Fale pelo Instagram</a>
+            <a class="button button--primary" data-whatsapp href="https://wa.me/5515998049050">Solicitar orçamento</a>
+            <a class="button button--secondary" data-instagram href="https://www.instagram.com/fretesaleixo87/" rel="noopener noreferrer">Ver o Instagram</a>
             <a class="button button--secondary" id="contact-map" rel="noopener noreferrer" hidden>Ver no Google Maps</a>
           </div>
         </div>
-
-        <form class="quote-form" id="quote-form" aria-label="Solicitação de orçamento" aria-describedby="quote-help" novalidate hidden>
-          <p id="quote-help">Você será direcionado ao WhatsApp para concluir o envio. Os campos indicados como opcionais podem ficar em branco.</p>
-          <div class="quote-form__fields">
-            <div class="quote-field">
-              <label for="quote-name">Nome</label>
-              <input id="quote-name" name="name" autocomplete="name" maxlength="100" required aria-describedby="quote-name-error">
-              <p class="quote-field__error" id="quote-name-error" hidden></p>
-            </div>
-            <div class="quote-field">
-              <label for="quote-phone">WhatsApp para retorno</label>
-              <input id="quote-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="25" required aria-describedby="quote-phone-hint quote-phone-error">
-              <p class="quote-field__hint" id="quote-phone-hint">Informe o número com DDD.</p>
-              <p class="quote-field__error" id="quote-phone-error" hidden></p>
-            </div>
-            <div class="quote-field">
-              <label for="quote-service">Tipo de serviço</label>
-              <select id="quote-service" name="service" required aria-describedby="quote-service-error">
-                <option value="">Selecione o serviço</option>
-                <option>Mudança residencial</option>
-                <option>Frete</option>
-                <option>Carreto</option>
-                <option>Transporte</option>
-                <option>Outro</option>
-              </select>
-              <p class="quote-field__error" id="quote-service-error" hidden></p>
-            </div>
-            <div class="quote-field">
-              <label for="quote-date">Data desejada <span>(opcional)</span></label>
-              <input id="quote-date" name="date" type="date" min="0001-01-01" max="9999-12-31" aria-describedby="quote-date-error">
-              <p class="quote-field__error" id="quote-date-error" hidden></p>
-            </div>
-            <div class="quote-field">
-              <label for="quote-origin">Local de origem</label>
-              <input id="quote-origin" name="origin" maxlength="160" required aria-describedby="quote-origin-error">
-              <p class="quote-field__error" id="quote-origin-error" hidden></p>
-            </div>
-            <div class="quote-field">
-              <label for="quote-destination">Local de destino</label>
-              <input id="quote-destination" name="destination" maxlength="160" required aria-describedby="quote-destination-error">
-              <p class="quote-field__error" id="quote-destination-error" hidden></p>
-            </div>
-            <div class="quote-field quote-field--wide">
-              <label for="quote-notes">Observações <span>(opcional)</span></label>
-              <textarea id="quote-notes" name="notes" rows="4" maxlength="500" aria-describedby="quote-notes-error"></textarea>
-              <p class="quote-field__error" id="quote-notes-error" hidden></p>
-            </div>
-          </div>
-          <button class="button button--primary" type="submit">Abrir orçamento no WhatsApp</button>
-          <p class="quote-form__status" role="status" id="quote-status"></p>
-          <a id="quote-retry" rel="noopener noreferrer" hidden>Abrir o WhatsApp novamente</a>
-        </form>
       </div>
     </section>
   </main>
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div>
-        <a class="wordmark" href="#inicio">Aleixo <span>Fretes</span></a>
+        <a class="wordmark" href="#inicio"><img src="assets/images/logo.png" width="1254" height="1254" alt="Aleixo Fretes" loading="lazy"></a>
         <p>© <span id="footer-year"></span> Aleixo Fretes.</p>
       </div>
       <nav aria-label="Navegação do rodapé">
@@ -326,7 +347,7 @@
           <li><a class="header-link" href="#servicos">Serviços</a></li>
           <li><a class="header-link" href="#faq">FAQ</a></li>
           <li><a class="header-link" href="#contato">Contato</a></li>
-          <li><a class="header-link" data-instagram href="https://www.instagram.com/aristide.aleixo/" rel="noopener noreferrer">Instagram</a></li>
+          <li><a class="header-link" data-instagram href="https://www.instagram.com/fretesaleixo87/" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </nav>
     </div>

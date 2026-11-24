@@ -33,8 +33,10 @@ As imagens ilustrativas geradas para os serviços, a embalagem e a chamada de or
 
 ## Alterar dados da empresa
 
-Edite `src/config/business.js`. Use o endereço HTTPS definitivo da página inicial em `siteUrl`. Para ativar o formulário, informe `whatsappNumber` com DDI, DDD e número, apenas dígitos. `googleMapsUrl` habilita o link de localização. `instagramUrl` alimenta os links e o schema.
+Edite `src/config/business.js`. Use o endereço HTTPS definitivo da página inicial em `siteUrl`. Para configurar os botões de orçamento, informe `whatsappNumber` com DDI, DDD e número, apenas dígitos. `googleMapsUrl` habilita o link de localização. `instagramUrl` alimenta os links e o schema.
 
-Para a galeria, adicione fotos reais em `assets/images/` e preencha `galleryImages` com `path`, `alt` e, opcionalmente, `caption`. Em `testimonials`, use o texto aprovado em `quote`, a atribuição aprovada em `author`, se houver, e `authorized: true` após autorização. Listas vazias deixam as seções ausentes.
+Para atualizar a galeria, adicione as mídias em `assets/` e edite os itens da seção `#galeria` no `index.html`. Use texto alternativo nas fotos e um título nos vídeos.
+
+Em `testimonials`, use o texto aprovado em `quote`, a atribuição aprovada em `author`, se houver, e `authorized: true` após autorização. A seção de depoimentos aparece quando há conteúdo aprovado.
 
 Os campos locais reservados serão incorporados ao conteúdo e ao JSON-LD após a validação dos dados públicos. Veja [PENDENCIAS-CLIENTE.md](docs/PENDENCIAS-CLIENTE.md) e [ENTREGA.md](docs/ENTREGA.md).
