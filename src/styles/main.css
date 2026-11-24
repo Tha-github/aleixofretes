@@ -181,7 +181,7 @@ img { display: block; max-inline-size: 100%; }
 .process__steps li { padding: .9rem 0 0 .35rem; border-top: 1px solid var(--line); }
 .process__steps li::marker { color: var(--green); font-weight: 800; }
 .gallery, .testimonials { background: var(--paper); border-top: 1px solid var(--line); }
-.gallery .section-title { text-align: center; }
+.gallery .section-title { position: relative; inset-block-start: -1.5rem; text-align: center; }
 .testimonials__list { display: grid; gap: 1.2rem; margin-top: 2rem; }
 .gallery__controls { display: flex; justify-content: center; gap: .75rem; margin-top: 1.25rem; }
 .gallery__controls [aria-disabled="true"] { opacity: .55; cursor: default; }
@@ -202,9 +202,15 @@ img { display: block; max-inline-size: 100%; }
 @media (width >= 63rem) {
   .gallery__track { grid-auto-columns: calc((100% - 2.4rem) / 3); }
 }
-.gallery__figure img { width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: var(--radius); background: var(--cream); }
-.gallery__figure video { display: block; width: 100%; aspect-ratio: 3 / 2; border-radius: var(--radius); background: #161616; }
-.gallery__figure figcaption, .testimonial figcaption { margin-top: .6rem; color: var(--green); font-weight: 650; }
+.gallery__figure :is(img, video) {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: var(--radius);
+  background: var(--cream);
+}
+.testimonial figcaption { margin-top: .6rem; color: var(--green); font-weight: 650; }
 .testimonials__list { max-width: 50rem; }
 .testimonial { padding-left: 1.25rem; border-left: 2px solid var(--green); overflow-wrap: anywhere; }
 .testimonial blockquote { font-size: 1.2rem; }

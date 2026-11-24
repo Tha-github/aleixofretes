@@ -3,6 +3,7 @@
   const controls = document.querySelector('.gallery__controls');
   const [previous, next] = controls.querySelectorAll('button');
   const [first, second] = track.children;
+  const videos = track.querySelectorAll('video');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function updateControls() {
@@ -26,5 +27,19 @@
   next.addEventListener('click', () => move(next, 1));
   track.addEventListener('scroll', updateControls, { passive: true });
   window.addEventListener('resize', updateControls);
+
+  track.addEventListener('play', event => {
+    for (const video of videos) {
+      if (video !== event.target && !video.paused) video.pause();
+    }
+  }, true);
+
+  const visibility = new IntersectionObserver(entries => {
+    for (const { target, intersectionRatio } of entries) {
+      if (intersectionRatio < 0.5 && !target.paused) target.pause();
+    }
+  }, { root: track, threshold: 0.5 });
+
+  for (const video of videos) visibility.observe(video);
   updateControls();
 }
